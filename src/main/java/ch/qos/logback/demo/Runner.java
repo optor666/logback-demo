@@ -23,7 +23,7 @@ public class Runner {
   void addTask() {
     Runnable runnable = new LoggingTask("Howdydy-diddly-ho");
     scheduledExecutorService.scheduleAtFixedRate(runnable,
-            0, 100, TimeUnit.MILLISECONDS);
+            0, 100, TimeUnit.SECONDS);
   }
 
   public void stop() {

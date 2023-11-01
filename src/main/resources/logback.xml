@@ -13,13 +13,22 @@
     </layout>
   </appender>
 
+  <appender name="CYCLIC"
+            class="ch.qos.logback.core.read.CyclicBufferAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>
+        %d{HH:mm:ss.SSS} [%thread] %-5level %logger{32} - %msg%n
+      </pattern>
+    </layout>
+  </appender>
+
   <appender name="FILE"
             class="ch.qos.logback.core.rolling.RollingFileAppender">
     <File>logFile.log</File>
     <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <FileNamePattern>
-        logFile.%d{yyyy-MM-dd_HH-mm}.log.zip
+        logFile.%d{yyyy-MM-dd_HH}.log.zip
       </FileNamePattern>
     </rollingPolicy>
 
@@ -33,6 +42,7 @@
   <root>
     <level value="DEBUG"/>
     <appender-ref ref="STDOUT"/>
+    <appender-ref ref="CYCLIC"/>
     <appender-ref ref="FILE"/>
   </root>
 
