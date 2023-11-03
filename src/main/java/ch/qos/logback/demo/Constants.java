@@ -1,8 +1,14 @@
 package ch.qos.logback.demo;
 
+/**
+ * 常量类
+ */
 public class Constants {
   
   public static final String MGMNT_DOMAIN = "qos";
+  /**
+   * 用户ID session key
+   */
   public static final String USERID_SESSION_KEY = "userid";
   public static final String USERID_MDC_KEY = "userid";
   public static final String USERNAME_PROPERTY = "username";

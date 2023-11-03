@@ -7,9 +7,12 @@
   <artifactId>logback-demo</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
+  <url>http://localhost:8080</url>
 
   <properties>
     <lb.version>1.0.7</lb.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
 
@@ -21,12 +24,7 @@
       <scope>compile</scope>
     </dependency>
 
-    <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.1.1</version>
-      <!--<scope>provided</scope>-->
-    </dependency>
+
 
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -72,7 +70,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.0.1</version>
+        <version>3.2.2</version>
         <configuration>
           <archive>
           </archive>
@@ -123,10 +121,8 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.1</version>
+        <version>3.11.0</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
         </configuration>
       </plugin>
     </plugins>
@@ -137,6 +133,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <version>3.12.1</version>
         <configuration>
         </configuration>
       </plugin>
@@ -144,10 +141,18 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
+        <version>3.3.1</version>
         <configuration>
-          <aggregate>true</aggregate>
           <javadocDir>target/site/apidocs/</javadocDir>
           <linkJavadoc>true</linkJavadoc>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.4.5</version>
+        <configuration>
         </configuration>
       </plugin>
     </plugins>
